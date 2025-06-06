@@ -3,10 +3,10 @@ import { FaBookmark } from "react-icons/fa6";
 
 const Blog = ({blog,handleBookMark,handleMarkRead}) => {
    // const {blog}=props;
-    // console.log(handleBookMark)
+  
     return (
         <div className='m-4 p-4'>
-           {/* <h1>{blog.id}</h1>  */}
+           
            <div className="card bg-base-100 w-96 shadow-sm">
                 <figure>
                     <img
