@@ -9,10 +9,17 @@ import Navber from './Component/Navber/Navber'
 function App() {
 
   const [bookmarked,setBookMarked] =useState([])
+  const [readingCount,setReadingCount] =useState(0)
+  
   const handleBookMark=(blog)=>{
     setBookMarked([...bookmarked,blog])
   }
   
+  const handleMarkRead=(time)=>{
+    const newTime =readingCount+time;
+      
+      setReadingCount(newTime)
+  }
 
   return (
     <>
@@ -22,12 +29,12 @@ function App() {
       <div className="main-container flex text-center">
             
             <div className="left-container w-[70%]">
-                 <Blogs handleBookMark={handleBookMark}></Blogs>
+                 <Blogs handleBookMark={handleBookMark} handleMarkRead={handleMarkRead} ></Blogs>
             </div>
 
             <div className="right-container w-[30%]">
-              <h1>reading time : 0</h1>
-              <h1>Bookmarked count : 0</h1>
+              <h1>Reading time : {readingCount}</h1>
+              <h1>Bookmarked count : {bookmarked.length}</h1>
               {
                 bookmarked.map((marked)=> <p>{marked.title}</p>)
               }
