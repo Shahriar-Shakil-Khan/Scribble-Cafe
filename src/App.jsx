@@ -10,9 +10,21 @@ function App() {
 
   return (
     <>
+       <Navber></Navber>
       
-      <Navber></Navber>
-      <Blogs></Blogs>
+
+      <div className="main-container flex text-center">
+            
+            <div className="left-container w-[70%]">
+                 <Blogs></Blogs>
+            </div>
+
+            <div className="right-container w-[30%]">
+              <h1>reading time : 0</h1>
+              <h1>Bookmarked count : 0</h1>
+            </div>
+
+      </div>
      
     </>
   )
